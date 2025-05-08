@@ -1,0 +1,11 @@
+body { margin:0; font-family:Arial,sans-serif; background:#f5f5f5; }
+.tabs { display:flex; }
+.tabs button { flex:1; padding:12px; border:none; cursor:pointer; background:#ddd; }
+.tabs button.active { background:#fff; border-bottom:2px solid #0078d7; }
+.content { padding:20px; }
+input, select, button { width:100%; margin:8px 0; padding:8px; box-sizing:border-box; }
+.progress-holder { background:#eee; height:10px; border-radius:5px; overflow:hidden; margin:12px 0; }
+#progressBar { height:100%; width:0; background:#4caf50; }
+table { width:100%; border-collapse:collapse; margin-top:12px; }
+th, td { border:1px solid #ccc; padding:6px; text-align:left; }
+.time-labels { text-align:center; margin:8px; }

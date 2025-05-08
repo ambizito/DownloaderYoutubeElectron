@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Meus Downloads</title></head><body>
+    <div class="container">
+      <h1>Meus Downloads</h1>
+      <button id="back">Nova Tarefa</button>
+      <table id="tasks"><thead><tr><th>ID</th><th>URL</th><th>Status</th><th>Progresso</th></tr></thead><tbody></tbody></table>
+    </div>
+    <script>
+      const { api } = window;
+      const back = document.getElementById('back');
+      const tbody = document.querySelector('#tasks tbody');
+    
+      back.onclick = () => api.navigate('index');
+    
+      function render(tasks) {
+        tbody.innerHTML = '';
+        tasks.forEach(t => {
+          const row = document.createElement('tr');
+          row.innerHTML = `<td>${t.id}</td><td>${t.url}</td><td>${t.status}</td>
+            <td><div class="row-bar"><div class="inner-bar" style="width:${t.progress}%"></div></div></td>`;
+          tbody.append(row);
+        });
+      }
+    
+      api.getTasks().then(render);
+      api.onTaskUpdate(task => {
+        api.getTasks().then(render);
+      });
+    </script>
+    </body></html>

@@ -1,0 +1,29 @@
+{
+  "name": "downloaderyoutubeelectron",
+  "version": "1.0.0",
+  "description": "App desktop para download e manipulação de vídeos do YouTube",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-packager . youtube-downloader-electron --platform=win32 --arch=x64 --out=dist"
+  },
+  "dependencies": {
+    "electron": "^25.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^17.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ambizito/DownloaderYoutubeElectron.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ambizito/DownloaderYoutubeElectron/issues"
+  },
+  "homepage": "https://github.com/ambizito/DownloaderYoutubeElectron#readme"
+}
